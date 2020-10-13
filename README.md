@@ -1,8 +1,8 @@
 # network-status
 
-## Windows Only - LIVECODE
+Windows Only - LIVECODE
 
-Simple network status indicator for Lan and Wi-Fi connections
+## Simple network status indicator for Lan and Wi-Fi connections
 
 Uses a shell out to "netsh interface show interface" to retrieve Ethernet and Wi-Fi status
 
