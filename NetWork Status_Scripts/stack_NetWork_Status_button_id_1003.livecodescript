@@ -42,7 +42,8 @@ on mouseUp pMouseButton
       end if 
       
       --determine the wifi enabled and connected status and update the indicator graphics accordingly
-      if "Wi-Fi" or "WLAN" is among the words of line tLines of tNetWorksStatus then
+      --the wifi connection name is normally Wi-Fi or WLAN so just searching if the line contains a W should be ok
+      if "W" is among the chars of line tLines of tNetWorksStatus then
          put word 4 of line tLines of tNetWorksStatus && word 5 of line tLines of tNetWorksStatus into fld "LblWifiStatus"
          
          if word 2 of line tLines of tNetWorksStatus is "Connected" then

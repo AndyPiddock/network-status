@@ -5,7 +5,7 @@ Script "stack_NetWork_Status_"
 # ID: stack "NetWork Status"
 */
 
---allows for non windowed stack to be dragged
+
 local sgLeftOffset
 local sgTopOffset
 local sgDragging
