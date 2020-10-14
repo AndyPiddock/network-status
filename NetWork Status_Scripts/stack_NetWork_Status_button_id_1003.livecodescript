@@ -6,20 +6,26 @@ Script "stack_NetWork_Status_button_id_1003"
 */
 
 
--- Sent when the mouse is released after clicking
--- pMouseButton specifies which mouse button was pressed
 on mouseUp pMouseButton
+   --start the loop
    send "mouseUp" to me in 20 seconds
-   
+
+   --reset indicator graphic background colors between each test
    set the backgroundColor of grc "EthernetStatus" to white
    set the backgroundColor of grc "WifiStatus" to white
    set the backgroundColor of grc "WifiConnected" to white
    set the backgroundColor of grc "EthernetConnected" to white
+
+   --make sure the consule/command window is hidden
    set the hideConsoleWindows to true
+
+   --do the shell cmd
    put shell("netsh interface show interface") into tNetWorksStatus
    
+   --get all the data from the shell result and set a loop to iterate through each returned line
    repeat with tLines = 1 to the number of lines of tNetWorksStatus
       
+      --determine the ethernet enabled and connected status and update the indicator graphics accordingly
       if "Ethernet" is among the words of line tLines of tNetWorksStatus then
          put word 4 of line tLines of tNetWorksStatus && word 5 of line tLines of tNetWorksStatus into fld "LblEthernetStatus"
          
@@ -35,6 +41,7 @@ on mouseUp pMouseButton
          end if
       end if 
       
+      --determine the wifi enabled and connected status and update the indicator graphics accordingly
       if "Wi-Fi" or "WLAN" is among the words of line tLines of tNetWorksStatus then
          put word 4 of line tLines of tNetWorksStatus && word 5 of line tLines of tNetWorksStatus into fld "LblWifiStatus"
          
@@ -51,5 +58,5 @@ on mouseUp pMouseButton
       end if 
       
    end repeat
-   --answer tNetWorksStatus & Cr & CR & word 4 of line 5 of tNetWorksStatus && word 2 of line 5 of tNetWorksStatus
+
 end mouseUp

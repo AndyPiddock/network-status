@@ -19,3 +19,7 @@
 * ID: stack "NetWork Status"
 * [stack_NetWork_Status_](./NetWork Status_Scripts/stack_NetWork_Status_.livecodescript)
 
+**button "BtnTest" of card id 1002 of stack "NetWork Status"**
+* ID: button id 1003 of card id 1002 of stack "NetWork Status"
+* [stack_NetWork_Status_button_id_1003](./NetWork Status_Scripts/stack_NetWork_Status_button_id_1003.livecodescript)
+
