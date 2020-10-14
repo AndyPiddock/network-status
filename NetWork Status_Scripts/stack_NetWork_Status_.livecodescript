@@ -5,11 +5,12 @@ Script "stack_NetWork_Status_"
 # ID: stack "NetWork Status"
 */
 
---allows for non windowed stack to be dragged
+
 local sgLeftOffset
 local sgTopOffset
 local sgDragging
 
+--allows for non windowed stack to be dragged
 on mouseDown
    put item 1 of the mouseLoc into sgLeftOffset
    put item 2 of the mouseLoc into sgTopOffset
