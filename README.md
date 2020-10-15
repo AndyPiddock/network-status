@@ -2,6 +2,8 @@
 
 Windows Only - LIVECODE
 
+![Simple LiveCode network status indicator for Lan and Wi-Fi connections screenshot](https://github.com/AndyPiddock/network-status/blob/main/readme%20images/Network-Status.jpg)
+
 ## Simple LiveCode network status indicator for Lan and Wi-Fi connections
 
 Uses a shell out to "netsh interface show interface" to retrieve Ethernet and Wi-Fi status
